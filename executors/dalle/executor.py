@@ -12,7 +12,7 @@ class DalleGenerator(Executor):
     def generate(self, docs: DocumentArray, parameters: Dict, **kwargs):
 
         # can be of course larger but to save time and reduce the queue when serving public
-        num_images = max(1, min(9, int(parameters.get('num_images', 1))))
+        num_images = max(1, min(26, int(parameters.get('num_images', 1))))
         request_time = time.time()
         for d in docs:
             self.logger.info(f'dalle {num_images} [{d.text}]...')
